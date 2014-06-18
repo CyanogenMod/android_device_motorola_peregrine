@@ -29,6 +29,7 @@
 LOCAL_PATH := device/motorola/perergine
 
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/peregrine/mkbootimg.mk
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 8589934592
