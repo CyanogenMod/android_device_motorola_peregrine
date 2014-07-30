@@ -36,7 +36,7 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 8589934592
 
-TARGET_RECOVERY_FSTAB := device/motorola/peregrine/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/motorola/peregrine/rootdir/etc/fstab.peregrine
 
 #TWRP
 DEVICE_RESOLUTION := 720x1280
