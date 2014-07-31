@@ -1,0 +1,26 @@
+HOW-TO for building CyanogenMod
+_______________________________
+
+- First, follow http://source.android.com/source to figure out how to get your build environment running, etc
+- Make a directory for your build source, then sync CyanogenMod: repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0
+- git clone https://github.com/Shabbypenguin/android_device_motorola_peregrine device/motorola/peregrine
+- git clone https://github.com/Shabbypenguin/android_device_motorola_msm8226-common device/motorola/msm8226-common
+- git clone https://github.com/Shabbypenguin/android_kernel_motorola_msm8226 kernel/motorola/msm8226
+- That will give you my 3 repos you will need additional ones from CM github that can be found in device/motorola/peregrine/cm.dependencies
+- Plug in your phone, and run the extract files script against a working cyanogenmod build
+- Change directory to the top, and source the build environment setup: . build/envsetup.sh
+- Use the command brunch peregrine, and wait as your meal cooks. 
+- It should output an update.zip in out/target/product/peregrine/... you've made CyanogenMod. Congratulations. 
+
+
+
+List of Contributers to the device tree
+___________________________________________________________________________
+
+- DHacker
+- Shabbypenguin
+- SomCom3x
+
+A full CHANGELOG for CyanogenMod can be found in its vendor:  https://github.com/CyanogenMod/android_vendor_cm/blob/ics/CHANGELOG.mkdn 
+
+Keep in mind guys, CyanogenMod is open source, and a community project. Get involved, and help us code for a better future :D
