@@ -3,10 +3,21 @@ _______________________________
 
 - First, follow http://source.android.com/source to figure out how to get your build environment running, etc
 - Make a directory for your build source, then sync CyanogenMod: repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0
-- git clone https://github.com/Shabbypenguin/android_device_motorola_peregrine device/motorola/peregrine
-- git clone https://github.com/Shabbypenguin/android_device_motorola_msm8226-common device/motorola/msm8226-common
-- git clone https://github.com/Shabbypenguin/android_kernel_motorola_msm8226 kernel/motorola/msm8226
-- That will give you my 3 repos you will need additional ones from CM github that can be found in device/motorola/peregrine/cm.dependencies
+- Then you need to add this to .repo/local_manifests/roomservice.xml (if you dont have it then create it and put this in):
+
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Shabbypenguin/android_device_motorola_peregrine" path="device/motorola/peregrine" remote="github" />
+  <project name="Shabbypenguin/android_device_motorola_msm8226-common" path="device/motorola/msm8226-common" remote="github" />
+  <project name="Shabbypenguin/android_kernel_motorola_msm8226" path="kernel/motorola/msm8226" remote="github" />
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
+  <project name="CyanogenMod/android_device_motorola_qcom-common" path="device/motorola/qcom-common" remote="github" />
+  <project name="CyanogenMod/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" />
+  <project name="CyanogenMod/android_hardware_qcom_display-caf-new" path="hardware/qcom/display-caf-new" remote="github" />
+  <project name="CyanogenMod/android_hardware_qcom_media-caf-new" path="hardware/qcom/media-caf-new" remote="github" />
+</manifest>
+
+- Do a repo sync and it should grab everything you need
 - Plug in your phone, and run the extract files script against a working cyanogenmod build
 - Change directory to the top, and source the build environment setup: . build/envsetup.sh
 - Use the command brunch peregrine, and wait as your meal cooks. 
