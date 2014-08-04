@@ -6,7 +6,7 @@ _______________________________
 - Then you need to add this to .repo/local_manifests/roomservice.xml (if you dont have it then create it and put this in):
 
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest>
+< manifest>
   <project name="OUDhs/proprietary_vendor_motorola" path="vendor/motorola" remote="github" />
   <project name="OUDhs/android_device_motorola_peregrine" path="device/motorola/peregrine" remote="github" />
   <project name="OUDhs/android_device_motorola_msm8226-common" path="device/motorola/msm8226-common" remote="github" />
@@ -16,7 +16,7 @@ _______________________________
   <project name="CyanogenMod/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" />
   <project name="CyanogenMod/android_hardware_qcom_display-caf-new" path="hardware/qcom/display-caf-new" remote="github" />
   <project name="CyanogenMod/android_hardware_qcom_media-caf-new" path="hardware/qcom/media-caf-new" remote="github" />
-</manifest>
+< /manifest>
 
 - Do a repo sync and it should grab everything you need
 - Plug in your phone, and run the extract files script against a working cyanogenmod build
@@ -33,6 +33,6 @@ ___________________________________________________________________________
 - Shabbypenguin
 - somcom3x
 
-A full CHANGELOG for CyanogenMod can be found in its vendor:  https://github.com/CyanogenMod/android_vendor_cm/blob/ics/CHANGELOG.mkdn 
+A full CHANGELOG for CyanogenMod can be found in its vendor:  https://github.com/CyanogenMod/android_vendor_cm/blob/cm-11.0/CHANGELOG.mkdn 
 
 Keep in mind guys, CyanogenMod is open source, and a community project. Get involved, and help us code for a better future :D
