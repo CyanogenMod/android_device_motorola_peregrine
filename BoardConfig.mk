@@ -29,13 +29,18 @@
 LOCAL_PATH := device/motorola/perergine
 
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/peregrine/mkbootimg.mk
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+BOARD_HAS_NO_MISC_PARTITION := true
 
-# fix this up by examining /proc/mtd on a running device
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 8589934592
+
+TARGET_RECOVERY_FSTAB := device/motorola/peregrine/rootdir/etc/fstab.qcom
 
 #TWRP
 DEVICE_RESOLUTION := 720x1280
 TW_IGNORE_MAJOR_AXIS_0 := true
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+#TW_CUSTOM_POWER_BUTTON := 107

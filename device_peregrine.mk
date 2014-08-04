@@ -1,22 +1,27 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
 $(call inherit-product-if-exists, vendor/motorola/peregrine/peregrine-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/peregrine/overlay
+LOCAL_PATH := device/motorola/peregrine
 
-$(call inherit-product, build/target/product/full.mk)
+# peregrine specific overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom 
+    init.qcom.rc \
+    fstab.qcom
 
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_peregrine
-PRODUCT_DEVICE := peregrine
+PRODUCT_LOCALES := en_US
+PRODUCT_LOCALES += xhdpi
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+$(call inherit-product, device/motorola/msm8226-common/msm8226.mk)
+$(call inherit-product, device/motorola/msm8226-common/keylayout/keylayout.mk)
