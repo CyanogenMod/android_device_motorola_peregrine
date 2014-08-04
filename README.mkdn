@@ -7,9 +7,10 @@ _______________________________
 
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Shabbypenguin/android_device_motorola_peregrine" path="device/motorola/peregrine" remote="github" />
-  <project name="Shabbypenguin/android_device_motorola_msm8226-common" path="device/motorola/msm8226-common" remote="github" />
-  <project name="Shabbypenguin/android_kernel_motorola_msm8226" path="kernel/motorola/msm8226" remote="github" />
+  <project name="OUDhs/proprietary_vendor_motorola" path="vendor/motorola" remote="github" />
+  <project name="OUDhs/android_device_motorola_peregrine" path="device/motorola/peregrine" remote="github" />
+  <project name="OUDhs/android_device_motorola_msm8226-common" path="device/motorola/msm8226-common" remote="github" />
+  <project name="OUDhs/android_kernel_motorola_msm8226" path="kernel/motorola/msm8226" remote="github" />
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="CyanogenMod/android_device_motorola_qcom-common" path="device/motorola/qcom-common" remote="github" />
   <project name="CyanogenMod/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" />
@@ -30,7 +31,7 @@ ___________________________________________________________________________
 
 - DHacker
 - Shabbypenguin
-- SomCom3x
+- somcom3x
 
 A full CHANGELOG for CyanogenMod can be found in its vendor:  https://github.com/CyanogenMod/android_vendor_cm/blob/ics/CHANGELOG.mkdn 
 
