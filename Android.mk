@@ -12,17 +12,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# WARNING: Everything listed here will be built on ALL platforms,
+# including x86, the emulator, and the SDK.  Modules must be uniquely
+# named (liblights.tuna), and must build everywhere, or limit themselves
+# to only building on ARM if they include assembly. Individual makefiles
+# are responsible for having their own logic, for fine-grained control.
 
-# Inherit from peregrine device
-$(call inherit-product, device/motorola/peregrine/device.mk)
+LOCAL_PATH := $(call my-dir)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := peregrine
-PRODUCT_NAME := full_peregrine
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := peregrine
-PRODUCT_MANUFACTURER := motorola
+ifeq ($(TARGET_DEVICE),peregrine)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+endif

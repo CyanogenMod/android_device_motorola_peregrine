@@ -1,0 +1,4 @@
+# proprietary files for peregrine
+
+# Sensors
+lib/hw/sensors.msm8226.so

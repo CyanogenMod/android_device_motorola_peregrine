@@ -14,15 +14,19 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/motorola/peregrine/peregrine-vendor.mk)
 
-# Inherit from peregrine device
-$(call inherit-product, device/motorola/peregrine/device.mk)
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := peregrine
-PRODUCT_NAME := full_peregrine
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := peregrine
-PRODUCT_MANUFACTURER := motorola
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+# Inherit from msm8226-common
+$(call inherit-product, device/motorola/msm8226-common/msm8226.mk)

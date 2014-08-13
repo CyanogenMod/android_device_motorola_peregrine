@@ -13,34 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
-# disable makefiles (the proper mechanism to control what gets
-# included in a build is to use PRODUCT_PACKAGES in a product
-# definition file).
-#
-
+# inherit from common msm8226-common
 -include device/motorola/msm8226-common/BoardConfigCommon.mk
+
+LOCAL_PATH := device/motorola/peregrine
+
+# Kernel
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
+TARGET_KERNEL_CONFIG := msm8926_mmi_defconfig
+
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1023410176
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 5930614784
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
 -include vendor/motorola/peregrine/BoardConfigVendor.mk
-
-LOCAL_PATH := device/motorola/perergine
-
-BOARD_CUSTOM_BOOTIMG_MK := device/motorola/peregrine/mkbootimg.mk
-BOARD_HAS_NO_MISC_PARTITION := true
-
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 8589934592
-
-TARGET_RECOVERY_FSTAB := device/motorola/peregrine/rootdir/etc/fstab.qcom
-
-#TWRP
-DEVICE_RESOLUTION := 720x1280
-TW_IGNORE_MAJOR_AXIS_0 := true
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-#TW_CUSTOM_POWER_BUTTON := 107
