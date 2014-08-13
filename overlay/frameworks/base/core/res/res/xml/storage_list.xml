@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 **
-** Copyright 2011, The Android Open Source Project
+** Copyright 2014, The CyanogenMod Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License")
 ** you may not use this file except in compliance with the License.
@@ -36,8 +36,7 @@
 -->
 
 <StorageList xmlns:android="http://schemas.android.com/apk/res/android">
-    <storage android:mountPoint="/storage/sdcard0"
-	android:storageDescription="@string/storage_internal"
+    <storage android:storageDescription="@string/storage_internal"
         android:emulated="true"
         android:primary="true"
         android:removable="false"
