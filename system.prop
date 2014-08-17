@@ -4,8 +4,6 @@
 rild.libargs=-d /dev/smd0
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 
-ro.telephony.default_network=9
-
 # usb
 ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
