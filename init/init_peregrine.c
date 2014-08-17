@@ -37,6 +37,9 @@
 
 #include "init_msm.h"
 
+void gsm_properties();
+void cdma_properties(char cdma_sub[]);
+
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
@@ -57,17 +60,19 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     if (ISMATCH(radio, "0x1")) {
         /* xt1045*/
+        gsm_properties();
         property_set("ro.product.device", "peregrine");
         property_set("ro.product.name", "peregrine_retus");
         property_set("ro.product.model", "XT1045");
         property_set("ro.product.display", "Moto G");
-        property_set("ro.build.description", "peregrine_retus-user 4.4.3 KXB21.14-L1.23-4 1 release-keys");
-        property_set("ro.build.fingerprint", "motorola/peregrine_retus/peregrine:4.4.3/KXB21.14-L1.23-4/1:user/release-keys");
+        property_set("ro.build.description", "peregrine_retus-user 4.4.4 KXB21.14-L1.56 56 release-keys");
+        property_set("ro.build.fingerprint", "motorola/peregrine_retus/peregrine:4.4.4/KXB21.14-L1.56/56:user/release-keys");
         property_set("ro.mot.build.customerid", "retus");
         property_set("persist.radio.multisim.config", "");
 
     } else if (ISMATCH(radio, "0x3")) {
         /* xt1039 */
+        gsm_properties();
         property_set("ro.product.device", "peregrine");
         property_set("ro.product.name", "peregrine_retbr");
         property_set("ro.product.model", "XT1039");
@@ -79,6 +84,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     } else if (ISMATCH(radio, "0x5")) {
         /*xt1042 */
+        cdma_properties("0");
         property_set("ro.product.device", "peregrine");
         property_set("ro.product.name", "peregrine_usc");
         property_set("ro.product.model", "XT1042");
@@ -87,19 +93,24 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.fingerprint", "motorola/peregrine_usc/peregrine:4.4.4/KXB21.14-L1.41/41:user/release-keys");
         property_set("persist.radio.multisim.config", "");
         property_set("ro.mot.build.customerid ","usc");
-        property_set("telephony.lteOnCdmaDevice","1");
-        property_set("persist.radio.vrte_logic", "2");
-        property_set("persist.radio.0x9e_not_callname", "1");
-        property_set("persist.radio.skip_data_check", "1");
-        property_set("persist.ril.max.crit.qmi.fails", "4");
+        property_set("ro.com.android.dataroaming","true");
+        property_set("ro.mot.ignore_csim_appid","true");
+        property_set("persist.radio.mode_pref_nv10","1");
+        property_set("persist.radio.skip_data_check","1");
+        property_set("persist.radio.0x9e_not_callname","1");
+        property_set("persist.radio.vrte_logic","2");
+        property_set("persist.data_netmgrd_mtu","1422");
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
-        property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
         property_set("ro.com.google.clientidbase.ms", "android-uscellular-us");
         property_set("ro.com.google.clientidbase.am", "android-uscellular-us");
         property_set("ro.com.google.clientidbase.yt", "android-motorola");
+        property_set("ro.cdma.home.operator.alpha", "U.S. Cellular");
+        property_set("ro.cdma.home.operator.numeric", "311220");
+        property_set("telephony.sms.pseudo_multipart", "1");
 
      } else if (ISMATCH(radio, "0x7")) {
         /* xt1040 */
+        gsm_properties();
         property_set("ro.product.device", "peregrine");
         property_set("ro.product.name", "peregrine_reteu");
         property_set("ro.product.model", "XT1040");
@@ -113,4 +124,18 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
+}
+void gsm_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
+}
+
+void cdma_properties(char cdma_sub[])
+{
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+    property_set("ril.subscription.types","NV,RUIM");
+    property_set("DEVICE_PROVISIONED","1");
+    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("ro.telephony.default_network", "10");
 }
