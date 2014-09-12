@@ -14,3 +14,4 @@
 /dev/block/mmcblk1p1                                /external_sd auto    default                                                                        recoveryonly
 /devices/msm_sdcc.2/mmc_host                        auto         vfat    defaults                                                                       voldmanaged=sdcard1:auto,migrate=target,noemulatedsd
 /devices/platform/msm_hsusb_host                    auto         auto    defaults                                                                       voldmanaged=usbdisk:auto
+/dev/block/zram0                                    none         swap    defaults                                                                       zramsize=134217728
