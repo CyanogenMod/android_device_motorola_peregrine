@@ -25,7 +25,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/motorola/peregrine/init/init_peregrine.c
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-TARGET_KERNEL_CONFIG := msm8926_mmi_defconfig
+TARGET_KERNEL_CONFIG := peregrine
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
