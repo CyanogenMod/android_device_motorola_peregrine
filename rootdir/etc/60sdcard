@@ -1,0 +1,3 @@
+#!/system/bin/sh
+# Sdcard mount script
+mount /dev/block/mmcblk1p1 /external_sd
