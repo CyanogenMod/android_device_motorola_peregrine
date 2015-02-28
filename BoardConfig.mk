@@ -18,15 +18,18 @@
 
 LOCAL_PATH := device/motorola/peregrine
 
-# Vendor Unification Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/peregrine/init/init_peregrine.c
+# Assert
+#TARGET_OTA_ASSERT_DEVICE := auto
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := peregrine_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_peregrine.c
+TARGET_UNIFIED_DEVICE := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
