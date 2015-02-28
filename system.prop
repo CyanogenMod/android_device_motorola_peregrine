@@ -2,7 +2,7 @@
 
 # radio
 rild.libargs=-d /dev/smd0
-rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 
 # usb
 ro.usb.mtp=0x2e82
