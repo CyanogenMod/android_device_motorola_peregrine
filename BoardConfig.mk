@@ -23,6 +23,9 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/motorola/peregrine/init/init_peregrine.c
 
+# Board
+TARGET_BOARD_INFO_FILE := device/motorola/peregrine/board-info.txt
+
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := peregrine_defconfig
