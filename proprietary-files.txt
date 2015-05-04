@@ -35,6 +35,9 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/liboemcamera.so
 
+# Charger
+bin/charge_only_mode
+
 # Chromatix
 lib/libchromatix_ar0543_common.so
 lib/libchromatix_ar0543_default_video.so
