@@ -47,5 +47,5 @@ bin/akmd8963
 lib/hw/sensors.msm8226.so
 
 # Touch fw
-etc/firmware/aps-Falc-01300000-0130-falcon.tdat
-etc/firmware/synaptics-s2316-13091704-175833-falcon.tdat
+etc/firmware/aps-Falc-01300000-0130-peregrine.tdat
+etc/firmware/synaptics-s2316-13091704-175833-peregrine.tdat
