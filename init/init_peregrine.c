@@ -65,8 +65,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.name", "peregrine_retus");
         property_set("ro.product.model", "XT1045");
         property_set("ro.product.display", "Moto G");
-        property_set("ro.build.description", "peregrine_retus-user 4.4.4 KXB21.14-L1.56 56 release-keys");
-        property_set("ro.build.fingerprint", "motorola/peregrine_retus/peregrine:4.4.4/KXB21.14-L1.56/56:user/release-keys");
+        property_set("ro.build.description", "peregrine_retus-user 5.1 LPB23.13-37 37 release-keys");
+        property_set("ro.build.fingerprint", "motorola/peregrine_retus/peregrine:5.1/LPB23.13-37/37:user/release-keys");
         property_set("ro.mot.build.customerid", "retus");
         property_set("persist.radio.multisim.config", "");
 
@@ -74,12 +74,12 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1039 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_retbr");
+        property_set("ro.product.name", "peregrine_reteu");
         property_set("ro.product.model", "XT1039");
         property_set("ro.product.display", "Moto G");
-        property_set("ro.build.description", "peregrine_retbr-user 4.4.3 KXB21.14-L1.23-4 5 release-keys");
-        property_set("ro.build.fingerprint", "motorola/peregrine_retbr/peregrine:4.4.3/KXB21.14-L1.23-4/5:user/release-keys");
-        property_set("ro.mot.build.customerid", "retbr");
+        property_set("ro.build.description", "peregrine_reteu-user 5.1 LPB23.13-17 18 release-keys");
+        property_set("ro.build.fingerprint", "motorola/peregrine_reteu/peregrine:5.1/LPB23.13-17/18:user/release-keys");
+        property_set("ro.mot.build.customerid", "reteu");
         property_set("persist.radio.multisim.config", "");
 
     } else if (ISMATCH(radio, "0x5")) {
@@ -112,11 +112,11 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1040 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_reteu");
+        property_set("ro.product.name", "peregrine_retbr");
         property_set("ro.product.model", "XT1040");
         property_set("ro.product.display", "Moto G");
-        property_set("ro.build.description", "peregrine_reteu-user 4.4.4 KXB21.14-L1.46 42 release-keys");
-        property_set("ro.build.fingerprint", "motorola/peregrine_reteu/peregrine:4.4.4/KXB21.14-L1.46/42:user/release-keys");
+        property_set("ro.build.description", "peregrine_retbr-user 5.1 LPB23.13-8 7 release-keys");
+        property_set("ro.build.fingerprint", "motorola/peregrine_retbr/peregrine:5.1/LPB23.13-8/7:user/release-keys");
         property_set("ro.mot.build.customerid", "reteuall");
         property_set("persist.radio.multisim.config", "");
     }
