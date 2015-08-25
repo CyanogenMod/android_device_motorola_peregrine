@@ -16,18 +16,18 @@
 # inherit from common msm8226-common
 -include device/motorola/msm8226-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/motorola/peregrine
+DEVICE_PATH := device/motorola/peregrine
 
 # Vendor Unification Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/peregrine/init/init_peregrine.c
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_peregrine.c
 
 # Board
-TARGET_BOARD_INFO_FILE := device/motorola/peregrine/board-info.txt
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := peregrine_defconfig
 
 # Partitions
@@ -36,8 +36,11 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1157627904
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5930598400
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
 -include vendor/motorola/peregrine/BoardConfigVendor.mk
