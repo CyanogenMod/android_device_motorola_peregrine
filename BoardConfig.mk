@@ -21,7 +21,7 @@ DEVICE_PATH := device/motorola/peregrine
 # Vendor Unification Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_peregrine.c
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_peregrine.cpp
 
 # Board
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt

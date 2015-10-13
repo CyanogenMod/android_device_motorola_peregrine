@@ -38,7 +38,7 @@
 #include "init_msm.h"
 
 void gsm_properties();
-void cdma_properties(char cdma_sub[]);
+void cdma_properties(const char *cdma_sub);
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
@@ -131,7 +131,7 @@ void gsm_properties()
     property_set("ro.telephony.default_network", "9");
 }
 
-void cdma_properties(char cdma_sub[])
+void cdma_properties(const char *cdma_sub)
 {
     property_set("ro.telephony.default_cdma_sub", cdma_sub);
     property_set("ril.subscription.types","NV,RUIM");
