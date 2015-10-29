@@ -27,7 +27,7 @@ TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_peregrine.cpp
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_CONFIG := peregrine_defconfig
 
 # Partitions
