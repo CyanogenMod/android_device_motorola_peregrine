@@ -62,7 +62,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1045*/
         gsm_properties();
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_retus");
         property_set("ro.product.model", "XT1045");
         property_set("ro.product.display", "Moto G");
         property_set("ro.build.description", "peregrine_retus-user 5.1 LPB23.13-37 37 release-keys");
@@ -74,7 +73,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1039 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_reteu");
         property_set("ro.product.model", "XT1039");
         property_set("ro.product.display", "Moto G");
         property_set("ro.build.description", "peregrine_reteu-user 5.1 LPB23.13-17 18 release-keys");
@@ -86,7 +84,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /*xt1042 */
         cdma_properties("0");
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_usc");
         property_set("ro.product.model", "XT1042");
         property_set("ro.product.display", "Moto G");
         property_set("ro.build.description", "peregrine_usc-user 4.4.4 KXB21.14-L1.41 41 release-keys");
@@ -112,7 +109,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1040 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
-        property_set("ro.product.name", "peregrine_retbr");
         property_set("ro.product.model", "XT1040");
         property_set("ro.product.display", "Moto G");
         property_set("ro.build.description", "peregrine_retbr-user 5.1 LPB23.13-8 7 release-keys");
