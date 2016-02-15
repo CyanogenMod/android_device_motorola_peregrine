@@ -28,5 +28,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.target.rc
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
 # Inherit from msm8226-common
 $(call inherit-product, device/motorola/msm8226-common/msm8226.mk)
