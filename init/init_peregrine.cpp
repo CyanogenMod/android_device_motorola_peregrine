@@ -42,19 +42,13 @@ void cdma_properties(const char *cdma_sub);
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+    std::string platform = property_get("ro.board.platform");
+    if (!ISMATCH(platform.c_str(), ANDROID_TARGET))
         return;
 
-    property_get("ro.boot.radio", radio);
+    std::string radio = property_get("ro.boot.radio");
 
-    if (ISMATCH(radio, "0x1")) {
+    if (ISMATCH(radio.c_str(), "0x1")) {
         /* xt1045*/
         gsm_properties();
         property_set("ro.product.device", "peregrine");
@@ -65,7 +59,7 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "retus");
         property_set("persist.radio.multisim.config", "");
 
-    } else if (ISMATCH(radio, "0x3")) {
+    } else if (ISMATCH(radio.c_str(), "0x3")) {
         /* xt1039 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
@@ -76,7 +70,7 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "reteu");
         property_set("persist.radio.multisim.config", "");
 
-    } else if (ISMATCH(radio, "0x5")) {
+    } else if (ISMATCH(radio.c_str(), "0x5")) {
         /*xt1042 */
         cdma_properties("0");
         property_set("ro.product.device", "peregrine");
@@ -101,7 +95,7 @@ void vendor_load_properties()
         property_set("ro.cdma.home.operator.numeric", "311220");
         property_set("telephony.sms.pseudo_multipart", "1");
 
-     } else if (ISMATCH(radio, "0x7")) {
+     } else if (ISMATCH(radio.c_str(), "0x7")) {
         /* xt1040 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
@@ -113,10 +107,10 @@ void vendor_load_properties()
         property_set("persist.radio.multisim.config", "");
     }
 
-    property_get("ro.product.device", device);
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id %s setting build properties for %s device\n", radio.c_str(), device.c_str());
 }
+
 void gsm_properties()
 {
     property_set("telephony.lteOnGsmDevice", "1");
