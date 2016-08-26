@@ -35,20 +35,18 @@
 #include "log.h"
 #include "util.h"
 
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
 void gsm_properties();
 void cdma_properties(const char *cdma_sub);
 
 void vendor_load_properties()
 {
     std::string platform = property_get("ro.board.platform");
-    if (!ISMATCH(platform.c_str(), ANDROID_TARGET))
+    if (platform != ANDROID_TARGET)
         return;
 
     std::string radio = property_get("ro.boot.radio");
 
-    if (ISMATCH(radio.c_str(), "0x1")) {
+    if (radio == "0x1") {
         /* xt1045*/
         gsm_properties();
         property_set("ro.product.device", "peregrine");
@@ -59,7 +57,7 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "retus");
         property_set("persist.radio.multisim.config", "");
 
-    } else if (ISMATCH(radio.c_str(), "0x3")) {
+    } else if (radio == "0x3") {
         /* xt1039 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
@@ -70,7 +68,7 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "reteu");
         property_set("persist.radio.multisim.config", "");
 
-    } else if (ISMATCH(radio.c_str(), "0x5")) {
+    } else if (radio == "0x5") {
         /*xt1042 */
         cdma_properties("0");
         property_set("ro.product.device", "peregrine");
@@ -95,7 +93,7 @@ void vendor_load_properties()
         property_set("ro.cdma.home.operator.numeric", "311220");
         property_set("telephony.sms.pseudo_multipart", "1");
 
-     } else if (ISMATCH(radio.c_str(), "0x7")) {
+     } else if (radio == "0x7") {
         /* xt1040 */
         gsm_properties();
         property_set("ro.product.device", "peregrine");
