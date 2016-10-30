@@ -26,6 +26,9 @@ TARGET_UNIFIED_DEVICE := true
 # Board
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
+# Camera
+BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+
 # Kernel
 TARGET_KERNEL_CONFIG := peregrine_defconfig
 
