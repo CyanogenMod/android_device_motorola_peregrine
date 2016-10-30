@@ -38,5 +38,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 5930598400
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Camera
+BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+
 # inherit from the proprietary version
 -include vendor/motorola/peregrine/BoardConfigVendor.mk
